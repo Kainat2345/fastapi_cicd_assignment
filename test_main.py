@@ -1,2 +1,3 @@
 def test_health():
-    assert 1 == 2
+    response = client.get("/health")
+    assert response.status_code == 200
