@@ -25,3 +25,8 @@ jobs:
 
       - name: Run tests
         run: python -m pytest -v
+        on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
