@@ -1,8 +1,9 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from fastapi import FastAPI
 
 app = FastAPI()
+
+tasks = []
 
 @app.get("/")
 def root():
@@ -25,4 +26,4 @@ def get_tasks():
 @app.post("/tasks")
 def create_task(task: Task):
     tasks.append(task.dict())
-    return task
+    return task.dict()
